@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PyScript App</title>
+
+  <!-- PyScript 2026 Core -->
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.1.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2026.1.1/core.js"></script>
+
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      padding: 2rem;
+      background: #f7f7f7;
+    }
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: 12px;
+      max-width: 500px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+    }
+    button {
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      border: none;
+      background: #2563eb;
+      color: white;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <h1>🐍 PyScript App</h1>
+    <p>Click the button to run Python.</p>
+
+    <button id="my-button">Run Python</button>
+    <div id="output"></div>
+  </div>
+
+  <!-- Python entry point -->
+  <script type="py" src="./main.py" config="./conf.json"></script>
+
+</body>
+</html>
