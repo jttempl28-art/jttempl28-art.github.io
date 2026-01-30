@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>PyScript Redactor + GPT</title>
+  <link rel="stylesheet" href="https://pyscript.net/releases/2026.1.1/core.css" />
+  <script type="module" src="https://pyscript.net/releases/2026.1.1/core.js"></script>
+
+  <style>
+    body { font-family: system-ui; padding:2rem; background:#f7f7f7; }
+    .card { background:white; padding:1.5rem; border-radius:12px; max-width:600px; box-shadow:0 10px 25px rgba(0,0,0,0.08);}
+    button { padding:0.6rem 1.2rem; border-radius:8px; border:none; background:#2563eb; color:white; font-size:1rem; cursor:pointer;}
+    input, textarea { width:100%; padding:0.5rem; margin:0.3rem 0; border-radius:6px; border:1px solid #ccc; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Patient Data Redactor + GPT</h1>
+
+    <label>OpenAI API Key:</label>
+    <input type="password" id="api-key" placeholder="sk-..." />
+
+    <label>Upload files (.txt only):</label>
+    <input type="file" id="file-upload" multiple />
+
+    <label>Problem description:</label>
+    <textarea id="problem" placeholder="Enter the patient problem here"></textarea>
+
+    <button id="process-btn">Process & Get Recommendation</button>
+    <button id="download-btn">Download Redacted Text</button>
+
+    <h3>Redacted Output:</h3>
+    <div id="output" style="white-space:pre-wrap;"></div>
+
+    <h3>GPT-4o Recommendation:</h3>
+    <div id="gpt-output" style="white-space:pre-wrap;"></div>
+  </div>
+
+  <py-script src="main.py" config="conf.json"></py-script>
+</body>
+</html>
